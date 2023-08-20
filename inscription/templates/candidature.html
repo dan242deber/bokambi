@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidature</title>
+    <link rel="stylesheet" href="{% static 'assets/css/candidature.css' %}">
+</head>
+<body>
+    <h1>Liste des Candidatures</h1>
+    <ul>
+        {% for candidature in candidatures %}
+        <li>
+            <h2>{{ candidature.id_cand }}</h2>
+            <p>Contenu: {{ candidature.lib_cand }}</p>
+            <p>Date d'émission: {{ candidature.date_cand  }}</p>
+            <button><a href="{% url 'candidater' %}?id_cand={{ candidature.id_cand }}"> Candidater: {{ candidature.id_cand  }} </a></button>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bokambi ya Basàli | Connexion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style_login.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Se Connecter           </h2>
+  <form id="login-form" method="POST" action="{% url 'send_email_to_agent' %}">
+    {% csrf_token %}
+    <p>
+    <input type="email" id="username" name="username" placeholder="Adresse Email" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <input type="submit">
+  </form>
+  <div id="create-account-wrap">
+
+
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+  
+</body>
+</html>

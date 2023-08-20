@@ -1,0 +1,2 @@
+from inscription.models import *
+

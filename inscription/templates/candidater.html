@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire d'Inscription</title>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form method="post" action="{% url 'enregistrement' %}">
+        {% csrf_token %}
+        <input type="text" id="id_cand" name="id_cand" value="{{ id_cand }}" required hidden><br>
+        <label for="nom_pers">Nom :</label>
+        <input type="text" id="nom_pers" name="nom_pers" required><br>
+
+        <label for="prenom_pers">Prénom :</label>
+        <input type="text" id="prenom_pers" name="prenom_pers" required><br>
+
+        <label for="date_nais_pers">Date de naissance :</label>
+        <input type="date" id="date_nais_pers" name="date_nais_pers" required><br>
+
+        <label for="pays_nais_pers">Pays de naissance :</label>
+        <input type="text" id="pays_nais_pers" name="pays_nais_pers" required><br>
+
+        <label for="ville_nais_pers">Ville de naissance :</label>
+        <input type="text" id="ville_nais_pers" name="ville_nais_pers" required><br>
+
+        <label for="adresse_pers">Adresse :</label>
+        <input type="text" id="adresse_pers" name="adresse_pers" required><br>
+
+        <label for="telephone_pers">Téléphone :</label>
+        <input type="tel" id="telephone_pers" name="telephone_pers" required><br>
+
+        <label for="email_pers">Email :</label>
+        <input type="email" id="email_pers" name="email_pers" required><br>
+
+        <label for="genre_pers">Genre :</label>
+        <select id="genre_pers" name="genre_pers" required>
+            <option value="M">Masculin</option>
+            <option value="F">Féminin</option>
+        </select><br>
+
+
+        <label for="dossier_cand_pers">Dossier de Candidature :</label>
+        <input type="text" id="dossier_cand_pers" name="dossier_cand_pers"><br>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+</body>
+</html>

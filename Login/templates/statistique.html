@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histogramme des Agents Retraités</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Histogramme des Agents Retraités</h1>
+    <div style="width: 80%;">
+        <img src="data:image/png;base64,{{ image_base64 }}">
+    </div>
+    
+    <div>
+        <h2>Données :</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Année</th>
+                    <th>Nombre de retraités</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for year, count in data.items %}
+                <tr>
+                    <td>{{ year }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
